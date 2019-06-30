@@ -1,0 +1,44 @@
+import {firstName,lastName,year} from "./b.js" 
+// import * as circle from './b.js'
+console.log(firstName, lastName, year) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

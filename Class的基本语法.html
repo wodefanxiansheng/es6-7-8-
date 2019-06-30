@@ -1,0 +1,197 @@
+<script type="text/javascript">
+// function Point(x, y) {
+//   this.x = x;
+//   this.y = y;
+// }
+
+// Point.prototype.toString = function () {
+//   return '(' + this.x + ', ' + this.y + ')';
+// };
+
+// var p = new Point(1, 2);
+
+
+// class Point {
+//   constructor(x, y) {
+//   	// console.log(this)
+//     this.x = x;
+//     this.y = y;
+//   }
+
+//   toString() {
+//   	console.log(this)
+//     return '(' + this.x + ', ' + this.y + ')';
+//   }
+
+//   a(){
+//   	console.log(this)
+//   }
+// }
+
+// let s = new Point(10,20);
+
+
+
+// const MyClass = class{
+// 	getClassName(){
+// 		return 10
+// 	}
+// }
+
+// let inst = new MyClass();
+// console.log(inst.getClassName())
+
+
+// let person = new class {
+//   constructor(name) {
+//     this.name = name;
+//   }
+//   sayName() {
+//     console.log(this.name);
+//   }
+// }('张三');
+
+// person.sayName(); // "张三"
+
+
+
+// class Logger {
+//   constructor() {
+//     this.printName = this.printName.bind(this);
+//   }
+//   printName(name = 'there') {
+//  	console.log(this)
+//     this.print(`Hello ${name}`);
+//   }
+
+//   print(text) {
+//     console.log(text);
+//   }
+// }
+
+// const logger = new Logger();
+// logger.printName(); // TypeError: Cannot read property 'print' of undefined
+
+// class MyClass {
+//   constructor() {
+//     // ...
+//   }
+//   get prop() {
+//     return 'getter';
+//   }
+//   set prop(value) {
+//     console.log('setter: '+value);
+//   }
+// }
+
+// let inst = new MyClass();
+
+// inst.prop = 123;
+// console.log(inst.prop)
+// // setter: 123
+
+// inst.prop
+// console.log(inst.prop)
+// // 'getter'
+
+// class Foo {
+//   static classMethod() {
+//   	console.log(this)//如果静态方法包含this关键字，这个this指的是类，而不是实例
+//     return 'hello';
+//   }
+// }
+// // s
+// console.log(Foo.classMethod())// 'hello',
+
+// var foo = new Foo();
+// console.log(foo.classMethod())//foo.classMethod is not a function,如果在实例上调用静态方法，会抛出一个错误，表示不存在该方法
+
+// class Foo {
+// 	  static bar () {
+// 	    this.baz();
+// 	  }
+// 	  static baz () {
+// 	    console.log('hello');
+// 	  }
+// 	  baz () {
+// 	    console.log('world');
+// 	  }
+// }
+
+// class wrap extends Foo{
+
+// }
+// console.log(wrap.baz());
+// // console.log(Foo.bar()) // hello
+
+/**
+ * class的静态属性和实例属性
+ */
+
+// 静态属性
+// class Foo {
+
+// }
+
+// Foo.prop = 15644;
+// console.log(Foo.prop) // 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

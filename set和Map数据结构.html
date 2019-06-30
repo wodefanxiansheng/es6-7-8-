@@ -1,0 +1,158 @@
+<script type="text/javascript">
+/**
+ * 1.set
+ */
+
+// const s = new Set();
+// // console.log(typeof(s))//onject
+
+
+// const s = new Set();
+
+// [2, 3, 5, 4, 5, 2, 2].forEach(x => s.add(x));
+
+// for (let i of s) {
+//   console.log(i);
+// }
+// // 2 3 5 4
+
+
+// 例一
+// const set = [...new Set([1, 2, 3, 4, 4,2,2,1,1,8])];
+// console.log(set)
+// [...set]
+// [1, 2, 3, 4]
+
+// // 例二
+// const items = new Set([1, 2, 3, 4, 5, 5, 5, 5]);
+// console.log(items.size)// 5
+
+// // 例三
+// const set = new Set(document.querySelectorAll('div'));
+// set.size // 56
+
+// // 类似于
+// const set = new Set();
+// document
+//  .querySelectorAll('div')
+//  .forEach(div => set.add(div));
+// set.size // 56
+
+
+// let s =  new Set();
+// s.add(1).add(2).add(2).add(2).add(2).add(2);
+// console.log(s.size)
+
+// if(s.has(100) == true){
+// 	console.log("存在100")
+// }else{
+// 	console.log("不存在100")
+// }
+
+// s.delete(2);
+// console.log([...s])
+
+/**
+ * 数组去重的方法
+ */
+// 1.第一种
+
+// let arr = [1,1,1,2,3,4,4,4,555,666,666,888,8,8,8];
+// let arr2 = [...new Set(arr)];
+// console.log(arr2)
+
+// 第二种Array.from方法可以将 Set 结构转为数组。
+// function dedupe(array) {
+//   return Array.from(new Set(array));
+// }
+// let arr3 = dedupe(arr);
+// console.log(arr3)
+
+//方法三  利用数组中的filter方法
+ var arr = ['apple','strawberry','banana','pear','apple','orange','orange','strawberry'];
+ var r = arr.filter(function(element,index,self){
+    return self.indexOf(element) === index;
+ });
+ // console.log(r);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

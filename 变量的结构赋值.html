@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script type="text/javascript">
+/**
+ * 1.数组的解构赋值
+ * 
+ */
+// let [page,showBool,list,pagelist] = [
+// 								1,
+// 								false,
+// 								[],
+// 								{
+// 									a:'1',
+// 									b:2,
+// 									pageBool:false
+// 								}
+// 	];
+
+
+// let [head,,...tail] = [1,,3,4,5,6]
+// console.log(tail)
+
+// let [x,  ...z] = ['a'];
+// console.log(x) // "a"
+// console.log(z)// []
+
+
+// let [a,...foo] = ["2"];
+// // let [bar, foo] = [1];
+// console.log(foo,a)
+
+
+// let [a, [...b], d] = [1, [2, 3], 4];
+// a // 1
+// console.log(b)// 2
+// d // 4
+
+
+
+// let [fool = true,page = 1,pageList = '10',list = []] = [];
+// console.log(fool,page,pageList,list)
+
+// function f() {
+//   console.log('aaa');
+// }
+
+// let [x = f()] = [1];
+
+// console.log(x)
+
+
+
+/**
+ * 对象的结构赋值
+ */
+
+// let { bar,foo } = { foo: "aaa", bar: "bbb" };
+// console.log(bar,foo)// undefined
+
+
+
+/**
+ * 字符串的结构赋值
+ */
+// const [a,b,c,d] = "654446565";
+// console.log(a,b,c,d)
+
+
+// let {length : len} = 'helloslddkdkk';
+// document.write(len)
+
+/**
+ * 数值和布尔值的结构赋值
+ */
+
+// let {toString: s} = 123;
+// s === Number.prototype.toString // true
+
+// let {toString: s} = true;
+// s === Boolean.prototype.toString // true
+/**
+ * [函数参数的结构赋值]
+ * @author feifei
+ * @DateTime 2018-10-25T10:05:16+0800
+ * @param    {[type]}                 [x [description]
+ * @param    {[type]}                 y] [description]
+ */
+// function add([x, y]){
+//   return x + y;
+// }
+// add([1, 2]); // 3
+
+
+/**
+ * js的循环
+ */
+
+/*
+共同点：
+
+    1.都是循环遍历数组中的每一项。
+
+    2.forEach() 和 map() 里面每一次执行匿名函数都支持3个参数：数组中的当前项item,当前项的索引index,原始数组input。
+
+    3.匿名函数中的this都是指Window。
+
+    4.只能遍历数组。
+ */
+
+
+
+// forEach循环,通过索引改变了原来的数组,理论上这个方法是没有返回值的，仅仅是遍历数组中的每一项，不对原来数组进行修改；但是可以自己通过数组的索引来修改原来的数组；
+// let arr = [1,2,4555,44,344,4645554]
+// let c = arr.forEach(function (item,index,input) {
+// 	input[index] = item*10; 
+// })
+// console.log(arr,c)
+
+
+
+// map循环,有返回值,map的回调函数中支持return返回值；return的是啥，相当于把数组中的这一项变为啥（并不影响原来的数组，只是相当于把原数组克隆一份，把克隆的这一份的数组中的对应项改变了）；
+// let arr1 = [2,4,6,7]
+// let s = arr1.map((value,index,array) =>{
+// 	// console.log(value,index,array)
+// 	return value*100;
+// })
+// // console.log(arr1,s)
+
+// // for循环
+// for (var i = 0; i < arr1.length; i++) {
+// 	// console.log(arr1[i])
+// }
+
+/**
+ * jq的循环
+ */
+
+/*
+	共同点：即可遍历数组，又可遍历对象
+ */
+
+
+
+
+
+// let a = [[1, 2], [3, 4]].map(([a, b]) => a + b);
+// console.log(a)
+
+// function move({x = 0, y = 0} = {}) {
+//   return [x, y];
+// }
+
+// move({x: 3, y: 8}); // [3, 8]
+// move({x: 3}); // [3, 0]
+// move({}); // [0, 0]
+// move(); // [0, 0]
+
+
+
+/**
+ * 结构赋值的用途
+ */
+// （1）交换变量的值
+// let x = 1;
+// let y = 2;
+
+// [x, y] = [y, x];
+// console.log(x,y)
+
+// （2）从函数返回多个值
+
+// 返回一个数组
+// function example() {
+
+// 	return [1,2,3,54564]
+// }
+// let [a,b,c,d] = example();
+// console.log(a,b,c,d)
+
+// 返回一个对象
+// function example() {
+// 	  return {
+// 	    foo: 1,
+// 	    bar: 2
+// 	  };
+// }
+// let { foo, bar } = example();
+
+// （3）函数参数的定义
+
+
+
+// (4)提取 JSON 数据
+// let jsonData = {
+//   id: 42,
+//   status: "OK",
+//   data: [867, 5309]
+// };
+
+// let { id, status, data: number } = jsonData;
+
+// console.log(id, status, number);
+
+
+
+
+// （5）函数参数的默认值
+// let ajax = function (url, {
+//   async = true,
+//   beforeSend = function () {},
+//   cache = true,
+//   complete = function () {},
+//   crossDomain = false,
+//   global = true,
+//   // ... more config
+// } = {}) {
+//   // ... do stuff
+//   	console.log(async)
+// };
+// ajax()
+
+
+
+// （6）遍历 Map 结构
+
+// const map = new Map();
+// map.set('first', 'hello');
+// map.set('second', 'world');
+// // console.log(map)
+// for (let [key, value] of map) {
+//   console.log(key + " is " + value);
+// }
+
+// const arr = [122,3444,4555]
+const map = new Map();
+map.set('first', 'hello');
+map.set('second', 'world');
+for (let [key] of map) {
+  console.log(key)
+}
+
+// 获取键值
+for (let [,value] of map) {
+  console.log(value)
+}
+
+
+
+// （7）输入模块的指定方法
+
+const { SourceMapConsumer, SourceNode } = require("source-map");
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

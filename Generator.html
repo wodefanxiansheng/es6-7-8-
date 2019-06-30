@@ -1,0 +1,116 @@
+<script type="text/javascript">
+// function* helloWorldGenerator() {
+//   yield 52 + 25;
+//   yield 52 - 25;
+//   return 52 * 25;
+// }
+
+// var hw = helloWorldGenerator();
+// console.log(hw.next())
+// console.log(hw.next())
+// console.log(hw.next())
+// console.log(hw.next())
+
+
+// var arr = [1464, [[243, 3787], 4767], [435, 4686]];
+
+// var flat = function* (a) {
+//   var length = a.length;
+//   for (var i = 0; i < length; i++) {
+// 	    var item = a[i];
+// 	    if (typeof item !== 'number') {
+// 	      yield* flat(item);
+// 	    } else {
+// 	      yield item;
+// 	    }
+//   }
+// };
+
+// for (var f of flat(arr)) {
+//   console.log(f);
+// }
+
+// const obj = {
+// 	  [Symbol.iterator] : function () {
+// 	    return {
+// 	      next: function () {
+// 	        return {
+// 	          value: 1,
+// 	          done: true
+// 	        };
+// 	      }
+// 	    };
+// 	  }
+// };
+
+
+
+// var myIterable = {};
+// myIterable[Symbol.iterator] = function* () {
+//   yield 1;
+//   yield 2;
+//   yield 3;
+// };
+
+// console.log([...myIterable])// [1, 2, 3]
+
+
+// function* f() {
+//   for(var i = 0; true; i++) {
+//     var reset = yield i;
+//     if(reset) { i = -1; }
+//   }
+// }
+
+// var g = f();
+
+// g.next() // { value: 0, done: false }
+// g.next() // { value: 1, done: false }
+// g.next(true) // { value: 0, done: false }
+
+// Generator 函数是 ES6 提供的一种异步编程解决方案
+function* helloWorldGenerator() {
+	yield 'hello';
+	yield 'world';
+	return 'ending';
+}
+var hw = helloWorldGenerator();
+console.log(hw.next())
+
+console.log(hw.next())
+
+console.log(hw.next())
+
+
+function* f() {
+  console.log('执行了！')
+}
+
+var generator = f();
+
+setTimeout(function () {
+  generator.next()
+}, 2000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

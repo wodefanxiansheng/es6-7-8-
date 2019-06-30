@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div class="foo"></div>
+</body>
+</html>
+<script type="text/javascript">
+/**
+ * 1.块级作用域
+ */
+
+// （1）let 取代 var
+
+// if(true){
+// 	let x = 'hello';
+// }
+
+// for (let i = 0; i < 10; i++) {
+// 	// console.log(i)
+// }
+
+// const s = 100;
+
+/**
+ * 2.字符串
+ */
+// 静态字符串一律使用单引号或反引号，不使用双引号。动态字符串使用反引号。
+
+// good
+// const a = 'foobar';
+// const b = `foo${a}bar`;
+
+
+/**
+ * 3.解构赋值
+ */
+
+// 使用数组成员对变量赋值时，优先使用解构赋值。
+// const arr = [1,2,3,4];
+
+// const [a,b] = arr;
+// console.log(a,b)
+
+// 函数的参数如果是对象的成员，优先使用解构赋值。
+
+// function getFullName(obj) {
+// 	const {firstName,lastName} = obj
+// 	console.log(firstName,lastName)
+// }
+
+// let s = {
+// 	firstName:'fan',
+// 	lastName:'pengfei',
+// }
+// getFullName(s)
+
+
+/**
+ * 4.对象
+ */
+// const a = {k1:100,k2:200};
+// const b = {
+// 	k1:100,
+// 	k2:200,
+// }
+
+
+// const obj = {
+// 	x:null
+// }
+// obj.x = 100;
+
+
+
+// let ref = 'some value';
+// let atom = {
+// 	ref,
+// 	value: 1,
+// 	addValue(value){
+// 		return atom.ref + value
+// 	}
+// }
+// console.log(atom.addValue('651'))
+
+
+/**
+ * 5.数组
+ */
+
+// 使用扩展运算符（...）拷贝数组。
+// const items = [1,2,4]
+// const itemsCopy = [];
+// let i;
+// for (i = 0; i < items.length; i++) {
+//   itemsCopy[i] = items[i];
+// }
+// console.log(itemsCopy)
+
+// const itemsCopys = [...items];
+// console.log(itemsCopys)
+// 
+// 
+// const foo = document.querySelectorAll('.foo');
+// console.log(foo)
+// 
+
+// const nodes = Array.from(foo);
+// console.log(nodes)
+// console.log("8888")
+// (function () {
+// 	console.log('9999')
+// })()
+
+
+// (()=>{
+// 	// let arr = [1,2,3,5,46,253,745]
+
+// 	// arr.map( (x) =>{
+// 	// 	return x*x
+// 	// })
+
+// 	// console.log(arr)
+
+// 	// const arr = [56456,4648,897,12312,231];
+// 	// const a = function concatenateAll(...s) {
+// 	// 	return s.join('');
+// 	// }
+// 	// console.log(a(arr))
+// })()
+
+// 使用默认值语法设置函数参数的默认值。
+
+/**
+ * 7.Map结构,set结构
+ */
+
+// const s = new Set();
+
+// [2, 3, 5, 4, 5, 2, 2].forEach(x => s.add(x));
+
+// for (let i of s) {
+//   console.log(i);
+// }
+// const set = new Set([1, 2, 3, 4, 4]);
+// const a = [...set]
+
+// [...set]
+// let a = [1, 2, 3, 4]
+
+// console.log(typeof(a))
+
+
+
+
+/**
+ * 8.class
+ */
+
+class Queue {
+  constructor(contents = []) {
+    this._queue = contents;
+  }
+  pop() {
+    const value = this._queue[0];
+    this._queue.splice(0, 1);
+    return value;
+  }
+}
+const arr1 = [22,34,55,677]
+let s = new Queue(arr1);
+console.log(s)
+
+// 扩展运算符
+
+let h = [46,564,89,89];
+let h2 = ['ppp','ooo','iiii']
+let l = [...h,...h2]
+console.log(l)
+
+
+
+
+</script>

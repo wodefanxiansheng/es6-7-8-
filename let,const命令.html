@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script type="text/javascript">
+/**
+ * 1.let的使用
+ */
+// {
+// 	let a = 1000;
+// 	var b = 5446;
+// }
+// console.log(a)//ReferenceError: a is not defined.
+// console.log(b)//5446
+// 这表明，let声明的变量只在它所在的代码块有效。
+
+// for (let i = 0; i < 5; i++) {
+// 	console.log(i)
+// }
+
+// var a = [];
+// for (let i = 0; i < 10; i++) {
+//   a[i] = function () {
+//     console.log(i);
+//   };
+// }
+// a[6](); // 6
+
+
+
+// var b = [];
+// for (var i = 0; i < 10; i++) {
+//   b[i] = function () {
+//     console.log(i);
+//   };
+// }
+// b[1](); // 10
+
+
+// if (true) {
+//   // TDZ开始
+//   tmp = 'abc'; // ReferenceError
+//   // console.log(tmp); // ReferenceError
+
+//   let tmp; // TDZ结束
+//   console.log(tmp); // undefined
+
+//   tmp = 123;
+//   console.log(tmp); // 123
+// }
+
+// function bar(y = z = 2 ,x = y = z) {
+//   return [x, y,z];
+// }
+
+// console.log(bar()); 
+
+// function ceshi(a) {
+// 	console.log(a)
+// 	{
+// 		let a = 0;
+// 		a++
+// 		console.log(a)
+// 	}
+	
+// }
+// ceshi(12)
+
+
+
+
+/**
+ * 2.块级作用域
+ */
+
+// ES5 只有全局作用域和函数作用域，没有块级作用域，这带来很多不合理的场景。
+
+
+// 第一种场景，内层变量可能会覆盖外层变量。
+
+// var tmp = new Date();
+
+// function f() {
+// 	console.log(tmp);//undefined,原因在于变量提升，导致内层的tmp变量覆盖了外层的tmp变量。
+// 	if(true){
+// 		tmp = '45644546';
+// 		console.log(tmp)
+// 	}
+// }
+// f();
+
+// // 第二种场景，用来计数的循环变量泄露为全局变量。
+// var s = 'hello546455';
+
+// for (var i = 0; i < s.length; i++) {
+//   console.log(s[i]);
+// }
+// console.log(i); // 5,变量i只用来控制循环，但是循环结束后，它并没有消失，泄露成了全局变量。
+
+// es6的块级作用域
+// function f1() {
+// 	  let n = 5;
+// 	  if (true) {
+// 	    let n = 10;
+// 	    console.log(n)
+// 	  }
+// 	  console.log(n); // 5,这表示外层代码块不受内层代码块的影响。
+// }
+// f1();
+
+// {{{{
+// 	let a = 1000;
+// 	{
+// 		let a = 45;
+// 		console.log(a)
+// 	}
+// 	console.log(a)
+// }}}}
+
+// es5立即执行函数
+
+// (function () {
+// 	var a = 100;
+// 	console.log(a)//防止变量全局污染
+// })()
+
+
+// {
+// 	let a = 100;
+// 	console.log(a)	
+// }
+
+// // 情况一
+// if (true) {
+//   function f() {
+//   	console.log("8888")
+//   }
+// }
+
+
+// // 情况二
+// try {
+//   function f() {
+//   	console.log("888")
+//   }
+// } catch(e) {
+// 	console.log(e)
+  
+// }
+
+
+// function f() { 
+// 	console.log('I am outside!'); 
+// }
+
+// (function () {
+// 	  if (false) {
+// 	    // 重复声明一次函数f
+// 	    function f() { console.log('I am inside!'); }
+// 	  }
+
+// 	  f();
+// }());
+
+
+// {
+//   let a = 'secret';
+//   function f() {
+//   	console.log(a)
+//     return a;
+//   }
+//   f()
+// }
+
+
+// 函数表达式
+// {
+//   let a = 'secret';
+//   let f = function () {
+//   	console.log(a)
+//     return a;
+//   };
+//   f()
+// }
+
+
+
+
+
+/**
+ * const命令
+ */
+
+// const a = 10.5222;
+// function s() {
+// 	console.log(a)
+// }
+// s()
+
+// if (true) {
+//   let MAX = 5;
+// }
+// console.log(MAX)//Uncaught ReferenceError: MAX is not defined
+
+
+// const a = [];
+// a.push('Hello'); // 可执行
+// a.length = 0;    // 可执行
+// a = ['Dave'];    // 报错
+
+
+// const foo = Object.freeze({});
+
+// // 常规模式时，下面一行不起作用；
+// // 严格模式时，该行会报错
+// foo.prop = 123;
+
+// console.log(foo)
+
+
+// var constantize = (obj) => {
+//   Object.freeze(obj);
+//   Object.keys(obj).forEach( (key, i) => {
+//     if ( typeof obj[key] === 'object' ) {
+//       constantize( obj[key] );
+//     }
+//   });
+// };
+
+
+
+// ES6 声明变量的六种方法
+// var let const function命令 import class
+
+
+/**
+ * 顶层对象的属性
+ */
+// window.a = 1;
+// a // 1
+
+// a = 2;
+// window.a // 2   顶层对象的属性赋值与全局变量的赋值，是同一件事。
+
+
+var getGlobal = function () {
+  if (typeof self !== 'undefined') { return self; }
+  if (typeof window !== 'undefined') { return window; }
+  if (typeof global !== 'undefined') { return global; }
+  throw new Error('unable to locate global object');
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+<!-- 
+<script type="text/javascript">
+(function () {
+	var b = 885;
+	console.log(b)
+
+})()
+</script> -->

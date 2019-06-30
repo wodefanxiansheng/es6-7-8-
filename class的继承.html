@@ -1,0 +1,99 @@
+<script type="text/javascript">
+	
+
+// class Point {
+//   static hello(){
+//   	console.log('4564464')
+//   }
+//   constructor(x, y) {
+//      this.x = x||1;
+//      this.y = y||2;
+//   }
+// }
+// // constructor方法和toString方法之中，都出现了super关键字，它在这里表示父类的构造函数，用来新建父类的this对象。
+// class ColorPoint extends Point {
+//   constructor(x, y, color) {
+//     super(x, y); // 调用父类的constructor(x, y)
+//     console.log(this)
+//     this.color = color;
+//   }
+
+//   toString() {
+//     return this.color + ' ' + super.toString(); // 调用父类的toString()
+//   }
+// }
+
+// let child = new ColorPoint(10,20,'red');
+// ColorPoint.hello()
+
+// console.log(Object.getPrototypeOf(ColorPoint) === Point)//判断一个类是否继承了另一个类
+
+
+// class A {
+//   p() {
+//     return 2;
+//   }
+// }
+
+// class B extends A {
+//   constructor() {
+//     super();
+//     console.log(this.p()); // 2
+//   }
+// }
+
+// let b = new B();
+
+
+/**
+ * Minxin模式
+ */
+
+const a = {
+  a: 'a'
+};
+const b = {
+  b: 'b'
+};
+const c = {...a, ...b}; // {a: 'a', b: 'b'}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
